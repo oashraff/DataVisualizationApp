@@ -18,7 +18,7 @@ function setup() {
     gallery.addVisual(new ImmigrantsToCanada());
     gallery.addVisual(new Heatmap());
     gallery.addVisual(new BubbleChart());
-    gallery.addVisual(new StackedBarChart());
+
     
     // Add event listener to switch between full-screen and normal view
     canvasContainer.mouseClicked(() => toggleFullScreen(gallery));
