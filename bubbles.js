@@ -23,7 +23,7 @@ function BubbleChart() {
                 self.data = table; // Store the data in the object
                 self.loaded = true; // Mark the data as loaded
                 self.setup(); // Set up the chart after data is loaded
-            },
+            }),
             function(error) {
                 // Handle errors that occur during data loading
                 console.error("Failed to load data:", error);
