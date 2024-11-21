@@ -13,23 +13,27 @@ function BubbleChart() {
     this.loaded = false; // Track if the data has been successfully loaded
 
     // Preload function to load CSV data
-   this.preload = function() {
-    var self = this; // Ensure proper binding of 'this'
-    
-    // Load data from CSV file
-    loadTable(
-        'data/bubble/foodData.csv',  // Correct file path
-        'csv',                      // File type
-        'header',                   // Header configuration
-        function(table) {           // Success callback
-            self.data = table;      // Store the data in the object
-            self.loaded = true;     // Mark the data as loaded
-            self.setup();           // Set up the chart after data is loaded
-        },
-        function(error) {           // Error callback
-            console.error("Failed to load data:", error);
-        }
-    );
+   this.preload = async function() {
+    try {
+        // Load the CSV file asynchronously
+        this.data = await new Promise((resolve, reject) => {
+            loadTable(
+                'data/bubble/foodData.csv',  // File path
+                'csv',                      // File type
+                'header',                   // Header configuration
+                (table) => resolve(table),  // On success
+                (error) => reject(error)    // On failure
+            );
+        });
+
+        // Mark data as successfully loaded
+        this.loaded = true;
+
+        // Proceed with the setup after successful loading
+        this.setup();
+    } catch (error) {
+        console.error("Failed to load data:", error);
+    }
 };
 
 
