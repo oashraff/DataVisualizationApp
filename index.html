@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Visualisation App</title>
+
+  <!-- Libraries -->
+  <script src="lib/p5.min.js"></script>
+  <script src="lib/p5.dom.min.js"></script>
+  <script src="lib/html2canvas.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Main sketch file -->
+  <script src="sketch.js"></script>
+
+  <!-- Main visualisation files -->
+  <script src="tech-diversity-race.js"></script>
+  <script src="tech-diversity-gender.js"></script>
+  <script src="pay-gap-by-job-2017.js"></script>
+  <script src="pay-gap-1997-2017.js"></script>
+  <script src="climate-change.js"></script>
+  <script src="immigrants-canada-1980-2013.js"></script>
+  <script src="waffles.js"></script>
+  <script src="heatmap.js"></script>
+  <script src="bubbles.js"></script>
+  <script src="flight-delays.js"></script>
+    
+  <!-- extra scripts files -->
+  <script src="helper-functions.js"></script>
+  <script src="gallery.js"></script>
+  <script src="pie-chart.js"></script>
+  <script src="download-graph.js"></script>
+  <script src="box.js"></script>
+  
+  <!-- DOM Layout formatting/containers/buttons -->
+</head>
+<body>
+  <div id="app" class="container">
+    <div id="menu-container">
+      <ul id="visuals-menu"></ul>
+    </div>
+    <div id="canvas-container"></div>
+    <div id="controls-container">
+        <button id="download-button">Download Graph</button>
+    </div>
+    <div id="fullscreen-prompt">
+      <p>Click on the graph to enter fullscreen</p>
+    </div>
+  </div>
+</body>
+</html>
