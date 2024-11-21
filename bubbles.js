@@ -18,7 +18,7 @@ function BubbleChart() {
         
         // Load data from CSV file
         this.data = loadTable(
-            '/data/bubble/foodData.csv', 'csv', 'header',
+            'data/bubble/foodData.csv, 'csv', 'header',
             function(table) {
                 self.data = table; // Store the data in the object
                 self.loaded = true; // Mark the data as loaded
