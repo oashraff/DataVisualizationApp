@@ -13,23 +13,25 @@ function BubbleChart() {
     this.loaded = false; // Track if the data has been successfully loaded
 
     // Preload function to load CSV data
-    this.preload = function() {
-        var self = this; // Ensure proper binding of 'this'
-        
-        // Load data from CSV file
-        this.data = loadTable(
-            'data/bubble/foodData.csv, 'csv', 'header',
-            function(table) {
-                self.data = table; // Store the data in the object
-                self.loaded = true; // Mark the data as loaded
-                self.setup(); // Set up the chart after data is loaded
-            }),
-            function(error) {
-                // Handle errors that occur during data loading
-                console.error("Failed to load data:", error);
-            }
-        );
-    };
+   this.preload = function() {
+    var self = this; // Ensure proper binding of 'this'
+    
+    // Load data from CSV file
+    loadTable(
+        'data/bubble/foodData.csv',  // Correct file path
+        'csv',                      // File type
+        'header',                   // Header configuration
+        function(table) {           // Success callback
+            self.data = table;      // Store the data in the object
+            self.loaded = true;     // Mark the data as loaded
+            self.setup();           // Set up the chart after data is loaded
+        },
+        function(error) {           // Error callback
+            console.error("Failed to load data:", error);
+        }
+    );
+};
+
 
     // Setup function to initialize the bubbles and year dropdown
     this.setup = function() {
