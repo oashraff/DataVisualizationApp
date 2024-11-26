@@ -35,9 +35,6 @@ function BubbleChart() {
             console.error("Failed to load data:", error);
         }
     };
-}
-
-
 
     // Setup function to initialize the bubbles and year dropdown
     this.setup = function() {
@@ -153,7 +150,8 @@ function BubbleChart() {
         pop();
     };
 }
-}
+
+
 
 // Bubble class represents individual bubbles in the chart
 function Bubble(_name, _data) 
