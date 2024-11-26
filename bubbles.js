@@ -153,6 +153,7 @@ function BubbleChart() {
         pop();
     };
 }
+}
 
 // Bubble class represents individual bubbles in the chart
 function Bubble(_name, _data) 
